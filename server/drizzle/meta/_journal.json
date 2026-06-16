@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1780553786523,
+      "tag": "0000_dizzy_malice",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1780558617347,
+      "tag": "0001_optimal_greymalkin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1780591673546,
+      "tag": "0002_tricky_jackal",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1780850678235,
+      "tag": "0003_mighty_gauntlet",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1781284268454,
+      "tag": "0004_chunky_vision",
+      "breakpoints": true
+    }
+  ]
+}

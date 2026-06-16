@@ -1,0 +1,10 @@
+### Register a New Teacher
+POST http://localhost:5000/api/teachers/register
+Content-Type: application/json
+
+{
+  "name": "Zeeshan Ahmed",
+  "email": "zeeshan@school.com",
+  "phone": "03001234567",
+  "department": "Computer Science"
+}

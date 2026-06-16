@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Tailwind v4 CSS Variables configuration */
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #020617; /* slate-950 */
+  
+  --color-primary: #6366f1; /* Indigo 500 */
+  --color-border: #e2e8f0; /* slate-200 */
+  
+  --radius-xl: 0.75rem;
+}
+
+/* Global Styles */
+@layer base {
+  * {
+    border-color: var(--color-border);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: #f8fafc; /* slate-50 */
+    color: var(--color-foreground);
+  }
+}
+
+/* 🎨 Custom Professional Minimal Scrollbar for Dashboards */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; /* slate-300 */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; /* slate-400 */
+}
+
+/* ✨ Premium Utility Classes */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2;
+}
+
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-md border border-white/20;
+}

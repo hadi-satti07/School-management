@@ -1,0 +1,1 @@
+ALTER TABLE `classes` ADD `day_of_week` text NOT NULL;
