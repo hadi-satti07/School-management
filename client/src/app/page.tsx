@@ -46,7 +46,7 @@ export default function MainAuthPage() {
       } else if (cachedRole === "teacher") {
         router.push("/teacher/attendance");
       } else {
-        router.push("/student/dashboard");
+        router.push("/");
       }
     } else {
       setCheckingSession(false);

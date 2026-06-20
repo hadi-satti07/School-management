@@ -8,7 +8,7 @@ import crypto from "crypto";
 export const enrollStudent = async (req: Request, res: Response) => {
   try {
     // FIX: Body se seedha 'subject' nikalo jo frontend bhej raha hai
-    const { name, email, phone, subject } = req.body;
+    const { name, fatherName, email, phone, subject } = req.body;
 
     console.log("🚀 Frontend se aya hua Student Data:", req.body);
 
@@ -21,7 +21,7 @@ export const enrollStudent = async (req: Request, res: Response) => {
 
       if (existingUser) {
         return res.status(400).json({ 
-          error: `Email '${email}' pehle se kisi ${existingUser.role} ke liye register hai!` 
+          error: `This '${email}' will also registered for this  ${existingUser.role}` 
         });
       }
     }
@@ -31,17 +31,20 @@ export const enrollStudent = async (req: Request, res: Response) => {
       : `std-${Date.now()}-${Math.floor(Math.random() * 1000)}@school.com`;
 
     const pinCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const uniquePassword = Math.random().toString(36).slice(-6);
     const generatedId = crypto.randomUUID();
 
     const [newStudent] = await db.insert(users).values({
       id: generatedId,
       name: name || "Unknown Student",
       email: studentEmail,
+      fatherName: fatherName || "N/A",
       phone: phone || "N/A",
       subject: subject || "Not Assigned", // FIX: Using key matching frontend
       role: "student",                          
       pinCode: pinCode,
       isActivated: false,
+      password: uniquePassword,
     }).returning();
 
     console.log("✨ Student successfully saved in DB:", newStudent);
